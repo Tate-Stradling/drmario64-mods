@@ -1,13 +1,13 @@
 # Dr. Mario 64 Capsule+ Mod
 **Capsule+ is under active development. Expect experimental features and unstable builds.**
 
-This is the main feature branch. I plan to merge it into the master branch when it is stable.
+This is the main feature branch. I plan to merge it into the master branch when it is functioning and stable.
 
 ## Mod Overview
 
-The goal of this fork is to create an **expanded capsule preview system**:
+The goal of this mod is to create an **expanded capsule preview system**:
 - While the original game only shows the next capsule coming up, the mod aims to display the **next 3–4 capsules**.
-- This will hopefully encourage **deeper strategy** and **forward planning**, especially to **assist in attack moves** in multiplayer modes.
+- This will hopefully encourage **deeper strategy**, especially to **assist in attack moves** in multiplayer modes.
 
 ### Based On
 
@@ -46,7 +46,7 @@ make extract
 make
 ```
 
-If successful, the modded ROM will be located at:
+If successful, the final ROM will be located at:
 ```
 ./build/us/drmario64.us.z64
 ```
