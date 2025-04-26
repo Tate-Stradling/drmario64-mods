@@ -1,41 +1,24 @@
-# Dr. Mario 64
+# Dr. Mario 64 Capsule+ Mod
+**Capsule+ is under active development. Expect experimental features and unstable builds.**
 
-[![Build Status]][actions] ![Code us Progress] ![Code cn Progress] ![Code gw Progress]
+This is the main feature branch. I plan to merge it into the master branch when it is stable.
 
-[Build Status]: <https://github.com/AngheloAlf/drmario64/actions/workflows/ci.yml/badge.svg>
-[actions]: <https://github.com/AngheloAlf/drmario64/actions/workflows/ci.yml>
-[Code us Progress]: https://img.shields.io/endpoint?label=Code%20us&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Fdrmario64%2Fus%2Fcode%2F%3Fmode%3Dshield%26measure%3Dall
-[Code cn Progress]: https://img.shields.io/endpoint?label=Code%20cn&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Fdrmario64%2Fcn%2Fcode%2F%3Fmode%3Dshield%26measure%3Dall
-[Code gw Progress]: https://img.shields.io/endpoint?label=Code%20gw&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Fdrmario64%2Fgw%2Fcode%2F%3Fmode%3Dshield%26measure%3Dall
+## Mod Overview
 
-Matching decomp of Dr. Mario 64
+The goal of this fork is to create an **expanded capsule preview system**:
+- While the original game only shows the next capsule coming up, the mod aims to display the **next 3–4 capsules**.
+- This will hopefully encourage **deeper strategy** and **forward planning**, especially to **assist in attack moves** in multiplayer modes.
 
-[Progress graph :chart_with_upwards_trend:](https://angheloalf.github.io/drmario64/)
+### Based On
 
-## Dependencies
+This project builds on the [matching decomp of Dr. Mario 64](https://github.com/AngheloAlf/drmario64) by AngheloAlf. Please refer to their repository for additional information.
 
-All the instructions assume the user is using a Debian/Ubuntu based Linux
-distro. If you are a Windows user then it is recommended to use WSL2 with
-Ubuntu.
+## Quick Setup
 
-### System packages
+### System Dependencies
+Install the following packages (Ubuntu / WSL2 recommended):
 
-The build process has the following package requirements:
-
-* make
-* git
-* build-essential
-* clang
-* binutils-mips-linux-gnu
-* gcc-mips-linux-gnu
-* python3
-* pip3
-* venv
-* Rust
-
-Under Debian / Ubuntu (which we recommend using), you can install them with the following commands:
-
-```bash
+```
 sudo apt update
 sudo apt install make git build-essential clang binutils-mips-linux-gnu gcc-mips-linux-gnu python3 python3-pip python3-venv
 ```
