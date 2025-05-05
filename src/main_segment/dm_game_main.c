@@ -635,19 +635,32 @@ void func_80060FA0(struct_game_state_data_unk_178 *arg0, s32 arg1, s32 arg2) {
 }
 
 void dm_set_capsel(struct_game_state_data *arg0) {
+    s32 preview_index;
+    u8 mag;
+
     arg0->unk_034 = 0;
 
+    // Initialize current capsule
     func_80060FA0(&arg0->unk_178, CAPSMAGAZINE_GET_A(CapsMagazine[arg0->unk_032]),
                   CAPSMAGAZINE_GET_B(CapsMagazine[arg0->unk_032]));
     arg0->unk_033 = arg0->unk_032;
 
+    // Advance to next capsule
     arg0->unk_032++;
     if (arg0->unk_032 >= 0xFE) {
         arg0->unk_032 = 1;
     }
 
+    // Initialize the next capsule preview (first preview)
     func_80060F60(&arg0->unk_184, CAPSMAGAZINE_GET_A(CapsMagazine[arg0->unk_032]),
                   CAPSMAGAZINE_GET_B(CapsMagazine[arg0->unk_032]));
+    
+    // Initialize extra preview capsules
+    for (preview_index = 0; preview_index < EXTRA_PREVIEW_CAPSULES; preview_index++) {
+        mag = CapsMagazine[arg0->unk_032 + 1 + preview_index];
+        func_80060F60(&arg0->capsule_preview_stack[preview_index], 
+                      CAPSMAGAZINE_GET_A(mag), CAPSMAGAZINE_GET_B(mag));
+    }
 }
 
 const u8 _speed_561[] = {
@@ -5712,12 +5725,24 @@ void dm_game_graphic_common(struct_game_state_data *gameStateData, s32 arg1, Gam
     }
 }
 
+void draw_preview_capsule(struct_game_state_data *gameStateData, struct_game_state_data_unk_178 *cap, s32 is_small, s32 offset_x, s32 offset_y) {
+    s32 i;
+
+    for (i = 0; i < STRUCT_GAME_STATE_DATA_UNK_178_UNK_LEN; i++) {
+        load_TexPal(dm_game_get_capsel_pal(is_small, cap->unk_6[i])->texs[0]);
+        draw_Tex(cap->unk_0[i] * gameStateData->unk_00A + gameStateData->unk_006 + offset_x,
+                 cap->unk_2[i] * gameStateData->unk_00A + gameStateData->unk_008 + offset_y - 0xA,
+                 gameStateData->unk_00A, gameStateData->unk_00A, 0,
+                 cap->unk_4[i] * gameStateData->unk_00A);
+    }
+}
+
 void dm_game_graphic_p(struct_game_state_data *gameStateData, s32 arg1, GameMapCell *mapCells) {
     struct_watchGame *watchGameP = watchGame;
     s32 sp20[2];
     s32 sp28[2];
     s32 temp_s6;
-    s32 i;
+    s32 preview_index;
 
     if (gameStateData->unk_020 == 0xD) {
         return;
@@ -5741,12 +5766,14 @@ void dm_game_graphic_p(struct_game_state_data *gameStateData, s32 arg1, GameMapC
         return;
     }
 
-    for (i = 0; i < STRUCT_GAME_STATE_DATA_UNK_178_UNK_LEN; i++) {
-        load_TexPal(dm_game_get_capsel_pal(temp_s6, gameStateData->unk_184.unk_6[i])->texs[0]);
-        draw_Tex(gameStateData->unk_184.unk_0[i] * gameStateData->unk_00A + gameStateData->unk_006,
-                 (gameStateData->unk_184.unk_2[i] * gameStateData->unk_00A + gameStateData->unk_008) - 0xA,
-                 gameStateData->unk_00A, gameStateData->unk_00A, 0,
-                 gameStateData->unk_184.unk_4[i] * gameStateData->unk_00A);
+    // Draw the initial preview capsule
+    draw_preview_capsule(gameStateData, &gameStateData->unk_184, temp_s6, 0, 0);
+
+    // Draw the other preview capsules
+    for (preview_index = 0; preview_index < EXTRA_PREVIEW_CAPSULES; preview_index++) {
+        draw_preview_capsule(gameStateData, 
+                             &gameStateData->capsule_preview_stack[preview_index], 
+                             temp_s6, 0, (preview_index + 1) * -10);
     }
 }
 

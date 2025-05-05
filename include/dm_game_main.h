@@ -158,6 +158,10 @@ typedef struct struct_game_state_data_unk_140 {
     /* 0x04 */ UNK_TYPE1 unk_04[0x20];
 } struct_game_state_data_unk_140; // size = 0x24
 
+// Number of extra preview capsules shown 
+// (struct_game_state_data.capsule_preview_stack is dependent on this)
+#define EXTRA_PREVIEW_CAPSULES 3
+
 #define STRUCT_GAME_STATE_DATA_UNK_178_UNK_LEN 2
 
 typedef struct struct_game_state_data_unk_178 {
@@ -339,7 +343,9 @@ typedef struct struct_game_state_data {
     /* 0x3C0 */ u8 unk_3C0;
     /* 0x3C1 */ u8 unk_3C1;
     /* 0x3C2 */ UNK_TYPE1 unk_3C2[0x2];
-} struct_game_state_data; // size = 0x3C4
+    /* 0x3C4 */ struct_game_state_data_unk_178 capsule_preview_stack[EXTRA_PREVIEW_CAPSULES];
+    /* 0x3E5 */ UNK_TYPE1 unk_3E5[3];  // padding to align struct to 0x3E8
+} struct_game_state_data; // size = 0x3E8
 
 // GameStateBackup?
 typedef struct struct_gameBackup {
