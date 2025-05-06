@@ -1,6 +1,12 @@
-# Dr. Mario 64 Decompilation (Base Fork)
+# Dr. Mario 64 Level+ Mod
 
-This branch is a matching decomp of Dr. Mario 64. No gameplay modifications have been added here. It is used as a base to build on in the other branches.
+The goal of this mod is to allow players to **start at higher levels**:
+- In the original version of 1 player classic mode, the highest starting level is 21, and while you can continue to the following levels, you cannot retry them without going back to level 21. This mod enables you to **start at any level from 0-24** (levels after 24 have the same number of viruses), and lets you **retry each level individually**.
+- In the original multiplayer modes (vs. computer or players) the highest you can set someone is level 20. This mod enables you to start up to level 24.
+
+## Known Errors
+
+- This mod **does not run properly on certain emulators** such as Project64 (there are visual glitches such as the capsules being invisible). However, it **does run on cen64 and the original N64** (if you have a flash cartridge). It likely requires accurate emulation (rather than taking shortcuts that work for the original, but not modified versions such as this).
 
 ### Based On
 
