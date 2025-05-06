@@ -1,13 +1,15 @@
 # Dr. Mario 64 Capsule+ Mod
-**Capsule+ is under active development. Expect experimental features and unstable builds.**
-
-This is the main feature branch. I plan to merge it into the master branch when it is functioning and stable.
-
-## Mod Overview
 
 The goal of this mod is to create an **expanded capsule preview system**:
-- While the original game only shows the next capsule coming up, the mod aims to display the **next 3–4 capsules**.
+- While the original game only shows the next capsule coming up, the mod aims to display the **next 4 capsules**.
 - This will hopefully encourage **deeper strategy**, especially to **assist in attack moves** in multiplayer modes.
+
+## Known Errors
+
+- This mod **does not run properly on certain emulators** such as Project64 (there are visual glitches such as the capsules being invisible). However, it **does run on cen64 and the original N64** (if you have a flash cartridge). It likely requires accurate emulation (rather than taking shortcuts that work for the original, but not modified versions such as this).
+- The extra 3 capsules are **not shown on 1 Player modes** such as classic or marathon.
+- The added capsules are **not shown during the level countdown**.
+- The preview **disappears whenever a capsule drops** for a split second.
 
 ### Based On
 
