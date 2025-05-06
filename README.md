@@ -1,11 +1,6 @@
-# Dr. Mario 64 Capsule+ Mod
-**Capsule+ is under active development in the capsuleplus branch. Until it's ready to merge into master, this branch is a matching decomp.**
+# Dr. Mario 64 Decompilation (Base Fork)
 
-## Mod Overview
-
-The goal of this mod is to create an **expanded capsule preview system**:
-- While the original game only shows the next capsule coming up, the mod aims to display the **next 3–4 capsules**.
-- This will hopefully encourage **deeper strategy**, especially to **assist in attack moves** in multiplayer modes.
+This branch is a matching decomp of Dr. Mario 64. No gameplay modifications have been added here. It is used as a base to build on in the other branches.
 
 ### Based On
 
