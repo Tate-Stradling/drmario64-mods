@@ -6557,13 +6557,17 @@ void menuLvSel_init(MenuLvSel *menuLvSel, struct_watchMenu *watchMenuRef, void *
 
     menuLvSel->unk_0004 = _getMode(watchMenuRef);
     menuLvSel->unk_256C = 0;
-    menuLvSel->unk_2570 = 20;
 
-    for (i = 0; i < ARRAY_COUNTU(temp_s0->unk_4C); i++) {
-        menuLvSel->unk_2570 = MAX(menuLvSel->unk_2570, temp_s0->unk_4C[i].unk_4);
-    }
+    // Hardcode 23 as the max level
+    menuLvSel->unk_2570 = 23;
 
-    menuLvSel->unk_2570 = MIN(21, menuLvSel->unk_2570);
+    // menuLvSel->unk_2570 = 20;
+
+    // for (i = 0; i < ARRAY_COUNTU(temp_s0->unk_4C); i++) {
+    //     menuLvSel->unk_2570 = MAX(menuLvSel->unk_2570, temp_s0->unk_4C[i].unk_4);
+    // }
+
+    // menuLvSel->unk_2570 = MIN(21, menuLvSel->unk_2570);
 
     menuItem_init(&menuLvSel->unk_0008, 0x19, 0x2F);
     menuItem_init(menuLvSel->unk_0098, 0, 0);

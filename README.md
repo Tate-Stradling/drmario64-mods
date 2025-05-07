@@ -1,8 +1,8 @@
 # Dr. Mario 64 Level+ Mod
 
 The goal of this mod is to allow players to **start at higher levels**:
-- In the original version of 1 player classic mode, the highest starting level is 21, and while you can continue to the following levels, you cannot retry them without going back to level 21. This mod enables you to **start at any level from 0-24** (levels after 24 have the same number of viruses), and lets you **retry each level individually**.
-- In the original multiplayer modes (vs. computer or players) the highest you can set someone is level 20. This mod enables you to start up to level 24.
+- In the original version of 1 player classic mode, the highest starting level is 20-21 (depending if you've unlocked level 21 yet), and while you can continue to the following levels, you cannot retry them without going back to level 20 or 21. This mod enables you to **start at any level from 0-23** (levels after 23 have the same number of viruses), and lets you **retry each level individually**.
+- In the original multiplayer modes (vs. computer or players) the highest you can set someone is level 20. This mod enables you to start up to level 23.
 
 ## Known Errors
 

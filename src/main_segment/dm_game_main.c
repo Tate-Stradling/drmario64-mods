@@ -3620,7 +3620,9 @@ void dm_set_pause_on(struct_game_state_data *gameStateData, s32 arg1) {
     if (evs_gamesel == ENUM_EVS_GAMESEL_0) {
         gameStateData->unk_00C = GAMESTATEDATA_UNK_00C_18;
         gameStateData->unk_014 = GAMESTATEDATA_UNK_014_E;
-        if ((gameStateData->unk_026 < 0x16) || (temp_s3->unk_378 > 0)) {
+
+        // Allow players to retry level on pause (up to level 23)
+        if ((gameStateData->unk_026 <= 23) || (temp_s3->unk_378 > 0)) {
             retryMenu_init(0, 1);
         } else {
             retryMenu_init(0, 0);
@@ -3954,7 +3956,8 @@ s32 dm_game_main_1p(void) {
             watchGameP->unk_3C4 = 0;
         }
 
-        if ((gameStateData->unk_026 < 0x16U) || ((watchGameP->unk_378 > 0))) {
+        // Allow players to retry level on death (up to level 23)
+        if ((gameStateData->unk_026 <= 23) || ((watchGameP->unk_378 > 0))) {
             retryMenu_init(0U, 3);
         } else {
             retryMenu_init(0U, 2);
