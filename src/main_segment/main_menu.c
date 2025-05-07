@@ -1287,7 +1287,9 @@ void func_80048B8C(MenuLvGauge *lvGauge, struct_watchMenu *watchMenuRef, s32 arg
                    s32 arg6) {
     lvGauge->watchMenuRef = watchMenuRef;
     lvGauge->unk_004 = arg2;
-    lvGauge->unk_008 = 0x14;
+
+    // Update menu gauge to go up to 23 in multiplayer modes
+    lvGauge->unk_008 = 23;
     lvGauge->unk_00C = arg4;
     menuItem_init(&lvGauge->unk_010, arg5, arg6);
     func_800479A8(&lvGauge->unk_0A0, watchMenuRef, _type_1543[arg2], arg3, -2, -2, _size_1542[arg2][0],
